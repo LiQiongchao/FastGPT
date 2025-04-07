@@ -16,7 +16,7 @@ RUN [ -f pnpm-lock.yaml ] || (echo "Lockfile not found." && exit 1)
 
 # if proxy exists, set proxy
 RUN if [ -z "$proxy" ]; then \
-        pnpm i; \
+        pnpm i --registry=https://registry.npmmirror.com; \
     else \
         pnpm i --registry=https://registry.npmmirror.com; \
     fi
