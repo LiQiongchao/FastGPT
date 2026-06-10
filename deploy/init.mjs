@@ -64,6 +64,9 @@ const vector = {
     config: `\
   MILVUS_ADDRESS: http://fastgpt-vector:19530
   MILVUS_TOKEN: none
+  # 可选：覆盖默认向量库名/Collection 名，不填则使用 fastgpt / modeldata
+  # DB_NAME: my_fastgpt
+  # TABLE_NAME: my_modeldata
     `,
     extra: ''
   },
@@ -71,7 +74,10 @@ const vector = {
     db: '',
     config: `\
   MILVUS_ADDRESS: zilliz_cloud_address
-  MILVUS_TOKEN: zilliz_cloud_token`,
+  MILVUS_TOKEN: zilliz_cloud_token
+  # 可选：覆盖默认向量库名/Collection 名，不填则使用 fastgpt / modeldata
+  # DB_NAME: my_fastgpt
+  # TABLE_NAME: my_modeldata`,
     extra: ''
   },
   ob: {

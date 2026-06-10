@@ -33,6 +33,11 @@ export class MilvusCtrl implements VectorControllerType {
   init: VectorControllerType['init'] = async () => {
     const client = await this.getClient();
 
+    logger.info('Milvus vector store config', {
+      dbName: DatasetVectorDbName,
+      collectionName: DatasetVectorTableName
+    });
+
     // init db(zilliz cloud will error)
     try {
       const { db_names } = await client.listDatabases();

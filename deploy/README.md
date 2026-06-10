@@ -1,3 +1,14 @@
+## Milvus / Zilliz 向量库命名配置
+
+在 `docker-compose.milvus.yml` 或 `docker-compose.zilliz.yml` 的 `x-vec-config` 中可配置：
+
+| 环境变量 | 说明 | 默认值 |
+|----------|------|--------|
+| `DB_NAME` | Milvus Database 名（仅 Milvus/Zilliz 生效） | `fastgpt` |
+| `TABLE_NAME` | 向量表/Collection 名（所有向量库共用） | `modeldata` |
+
+不配置时行为与旧版本完全一致。修改名称后**不会自动迁移**已有向量数据，旧数据仍保留在原 `fastgpt` / `modeldata` 中。Zilliz Cloud 上 `DB_NAME` 可能因不支持 `createDatabase`/`useDatabase` 而回退到实例默认库。
+
 ## 更新 docker compose 脚本
 
 ### 正常更新（不动服务，只改版本）

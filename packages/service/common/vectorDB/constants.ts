@@ -1,5 +1,12 @@
-export const DatasetVectorDbName = 'fastgpt';
-export const DatasetVectorTableName = 'modeldata';
+const DEFAULT_VECTOR_DB_NAME = 'fastgpt';
+const DEFAULT_VECTOR_TABLE_NAME = 'modeldata';
+
+/** Milvus database name; only effective when using Milvus/Zilliz */
+export const DatasetVectorDbName = process.env.DB_NAME?.trim() || DEFAULT_VECTOR_DB_NAME;
+
+/** Vector table/collection name; shared by all vector backends */
+export const DatasetVectorTableName =
+  process.env.TABLE_NAME?.trim() || DEFAULT_VECTOR_TABLE_NAME;
 
 export const PG_ADDRESS = process.env.PG_URL;
 export const OPENGAUSS_ADDRESS = process.env.OPENGAUSS_URL;

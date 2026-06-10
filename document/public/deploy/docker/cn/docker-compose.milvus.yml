@@ -43,7 +43,10 @@ x-log-config: &x-log-config
 x-vec-config: &x-vec-config
   MILVUS_ADDRESS: http://fastgpt-vector:19530
   MILVUS_TOKEN: none
-    
+  # 可选：覆盖默认向量库名/Collection 名，不填则使用 fastgpt / modeldata
+  # DB_NAME: my_fastgpt
+  # TABLE_NAME: my_modeldata
+
 
 services:
   # Vector DB
